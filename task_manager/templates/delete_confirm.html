@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block content %} 
+    <h1>Are You want to sure to delete?</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input class="btn btn-success" type="submit" value="Yes I'm sure">
+        <a href="{% url 'display_task' %}" class="btn btn-warning">No i wanna back</a>
+    </form>
+{% endblock %}
