@@ -38,29 +38,10 @@ class TaskUpdateView(UpdateView):
     success_url = reverse_lazy('display_task')
     
 def make_complete(request, pk):
-    task = TaskStoreModel.objects.get(id = pk)
-    TaskStoreModel(id = pk, title=task.title, desc = task.desc, status = 'Complete').save()
+    task = TaskStoreModel.objects.get(id=pk)
+    TaskStoreModel(id=pk, title=task.title, desc=task.desc, status='Complete').save()
     return redirect('display_task')
-    
-# def edit_book(request, id):
-#     book = BookStoreModel.objects.get(pk = id)
-#     form = BookStoreForm(instance=book)
-#     if request.method == 'POST':
-#         form = BookStoreForm(request.POST, instance = book)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('display_book')
-#     return render(request, 'store_book.html', {'form': form})
-
-# class TaskCompleteView(UpdateView):
-#     model = TaskStoreModel
-    # def get_object(self, queryset=None):
-    #     task = TaskStoreModel.objects.get(id=self.kwargs['id'])
-    #     print(task)
-        # task['status'] = 'Complete'
-        # TaskStoreModel.save()
-    
-    
+     
 class TaskDeleteView(DeleteView):
     model = TaskStoreModel
     template_name = 'delete_confirm.html'
