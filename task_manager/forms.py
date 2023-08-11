@@ -4,5 +4,5 @@ from task_manager.models import TaskStoreModel
 class TaskStoreForm(forms.ModelForm):
     class Meta:
         model = TaskStoreModel
-        fields = '__all__'
+        fields = ['title', 'desc']
     

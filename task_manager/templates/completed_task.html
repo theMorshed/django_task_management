@@ -1,6 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %} 
-    <h1 class="text-center bg-info text-white w-50 m-auto mb-4">Tasks</h1>
+    <h1 class="text-center bg-info text-white w-50 m-auto mb-4">Completed Tasks</h1>
     {% if tasks %}
         <table class="table table-bordered">
             <thead>
@@ -17,7 +17,7 @@
                         <td>{{task.title}}</td>
                         <td>{{task.desc}}</td>
                         <td>{{task.status}}</td>
-                        <td><a class="btn btn-danger btn-sm" href="{% url 'delete_book' pk=task.id %}">Delete</a> <a class="btn btn-primary btn-sm" href="{% url 'edit_task' pk=task.id %}">Edit</a> <a class="btn btn-success btn-sm" href="{% url 'make_complete' pk=task.id %}">Complete</a></td>
+                        <td><a class="btn btn-danger btn-sm" href="{% url 'delete_book' pk=task.id %}">Delete</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
