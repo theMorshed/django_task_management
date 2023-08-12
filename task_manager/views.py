@@ -1,6 +1,3 @@
-from typing import Any, Optional
-from django.db import models
-from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
